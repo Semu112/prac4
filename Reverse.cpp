@@ -58,7 +58,13 @@ std::string Reverse::reverseStringHelper(std::string letters, int n){
 }
 
 int Reverse::reverseDigit(int value){
-    return stoi(reverseDigitHelper(value));
+    if(value >= 0){
+        return stoi(reverseDigitHelper(value));
+    }
+    else{
+        std::cout << "This is not set up to work for negative numbers" << std::endl;
+        return -1;
+    }
 }
 
 std::string Reverse::reverseDigitHelper(int value){

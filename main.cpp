@@ -11,7 +11,7 @@ int main(void){
 
     std::cout << t.numTrucks(1024, 5) << std::endl;
 
-    std::cout << r.reverseDigit(54321) << std::endl;
+    std::cout << r.reverseDigit(-123) << std::endl;
     std::cout << r.reverseString("asdfghjklqwertyuiopzxcvbnm") << std::endl;
 
     std::cout << et.numTrucks(1024, 5) << std::endl;
