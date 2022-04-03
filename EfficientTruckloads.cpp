@@ -4,8 +4,8 @@
 #include <iostream>
 
 int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
-    if(numCrates < 2 || numCrates > 10000){
-        std::cout << "Program only set up for number of crates between 2 and 10000 inclusive" << std::endl;
+    if(numCrates < 2){
+        std::cout << "Program only set up for number of crates greater than or equal to 2" << std::endl;
         return -1;
     }
     else if(loadSize < 1 || loadSize > numCrates-1){
