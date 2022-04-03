@@ -3,9 +3,12 @@
 #include <iostream>
 
 int Truckloads::numTrucks(int numCrates, int loadSize){
-    if(numCrates < 0 || loadSize <= 0){
-        std::cout << "Program only set up for use with positive integers and a loadSize greater than 0" << std::endl;
+    if(numCrates < 2 || numCrates > 10000){
+        std::cout << "Program only set up for number of crates between 2 and 10000 inclusive" << std::endl;
         return -1;
+    }
+    else if(loadSize < 1 || loadSize > numCrates-1){
+        std::cout << "Program only set up for loadSize between 1 and numCrates-1 inclusive" << std::endl;
     }
     else{
         return numTrucksHelper(numCrates, loadSize);
