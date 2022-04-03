@@ -1,6 +1,6 @@
 #include "Truckloads.h"
 
-int TruckLoads::numTrucks(int numCrates, int loadSize){
+int Truckloads::numTrucks(int numCrates, int loadSize){
     //checks if numCrates is less than loadSize
     //If it isn't, returns 1 + numTrucks(numCrates-loadSize, loadSize)
 

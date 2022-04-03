@@ -2,7 +2,7 @@
 #include <math.h>
 #include <vector>
 
-int TruckLoads::numTrucks(int numCrates, int loadSize){
+int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
     //If numCrates is more than loadSize, splits crates into two piles
     //Returns the number of trucks needed for each pile added together
 

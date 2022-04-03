@@ -10,13 +10,13 @@ std::string Reverse::reverseString(std::string letters){
 
 std::string Reverse::reverseStringHelper(std::string letters, int n){
 
-    //n should start at string.length then go to 0. Once at zero, should return the string
+    //n should start at string.length then go to 1. Once at one, should return the string
 
     if(n<=1){
         return letters;
     }
 
-    //for case hithere
+    //for case hithere ---not done like this---
     /*
     returns e
     returns er
@@ -26,7 +26,7 @@ std::string Reverse::reverseStringHelper(std::string letters, int n){
     returns erehti
     returns erehtih
     */
-    //Also could do it like this
+    //Also could do it like this ---done like this---
     /*
     returns ehither
     returns erhithe

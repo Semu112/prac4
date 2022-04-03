@@ -1,7 +1,7 @@
 #ifndef EFFICIENTTRUCKLOADS_H
 #define EFFICIENTTRUCKLOADS_H
 
-class TruckLoads {
+class EfficientTruckloads {
 
     public:
         int numTrucks(int numCrates, int loadSize);
