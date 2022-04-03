@@ -1,11 +1,12 @@
 #include "Reverse.h"
+#include "Truckloads.h"
 #include <iostream>
 
 int main(void){
 
-    Reverse r;
+    TruckLoads t;
 
-    std::cout << r.reverseDigit(12);
+    std::cout << t.numTrucks(1024, 5);
 
     return 0;
 }
