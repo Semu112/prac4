@@ -2,24 +2,22 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <cmath>
 
 int main(void){
 
-    std::vector<std::array<int, 2>> v {
-        {0, 0},
-        {0, 0},
-        {0, 0}
-    };
+    int numCrates = 5;
+    int number = numCrates;
 
-    v[0] = {0, 1};
-    v[3][0] = 0;
+    double numberDividedByTwo = number/2.0;
 
-    std::cout << v.size();
+    std::cout << numberDividedByTwo << std::endl;
 
-    std::cout << v[0][0];
-    std::cout << v[0][1];
-    std::cout << v[3][0];
-    //std::cout << v[3][1];
+    int spinOff1 = std::ceil(numberDividedByTwo);
+    int spinOff2 = std::floor(numberDividedByTwo);
+
+    std::cout << spinOff1 << std::endl;
+    std::cout << spinOff2 << std::endl;
 
     return 0;
 }
