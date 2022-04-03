@@ -14,7 +14,7 @@ int main(void){
     std::cout << r.reverseDigit(-123) << std::endl;
     std::cout << r.reverseString("asdfghjklqwertyuiopzxcvbnm") << std::endl;
 
-    std::cout << et.numTrucks(1024, 5) << std::endl;
+    std::cout << et.numTrucks(10.9, 4) << std::endl;
 
 
     return 0;
