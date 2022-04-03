@@ -3,8 +3,8 @@
 #include <iostream>
 
 int Truckloads::numTrucks(int numCrates, int loadSize){
-    if(numCrates < 0){
-        std::cout << "Program only set up for positive integers" << std::endl;
+    if(numCrates < 0 || loadSize <= 0){
+        std::cout << "Program only set up for use with positive integers and a loadSize greater than 0" << std::endl;
         return -1;
     }
     else{
