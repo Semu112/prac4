@@ -3,6 +3,16 @@
 #include <iostream>
 
 int Truckloads::numTrucks(int numCrates, int loadSize){
+    if(numCrates < 0){
+        std::cout << "Program only set up for positive integers" << std::endl;
+        return -1;
+    }
+    else{
+        return numTrucksHelper(numCrates, loadSize);
+    }
+}
+
+int Truckloads::numTrucksHelper(int numCrates, int loadSize){
 
     //Old way
     //checks if numCrates is less than loadSize
@@ -41,6 +51,6 @@ int Truckloads::numTrucks(int numCrates, int loadSize){
         return 1;
     } 
     else{
-        return numTrucks(std::ceil(numCrates/2.0), loadSize) + numTrucks(std::floor(numCrates/2.0), loadSize);
+        return numTrucksHelper(std::ceil(numCrates/2.0), loadSize) + numTrucksHelper(std::floor(numCrates/2.0), loadSize);
     }
 }

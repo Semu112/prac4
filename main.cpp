@@ -9,7 +9,7 @@ int main(void){
     EfficientTruckloads et;
     Reverse r;
 
-    std::cout << t.numTrucks(10, 4) << std::endl;
+    std::cout << t.numTrucks(10.9, 4) << std::endl;
 
     std::cout << r.reverseDigit(-123) << std::endl;
     std::cout << r.reverseString("asdfghjklqwertyuiopzxcvbnm") << std::endl;
