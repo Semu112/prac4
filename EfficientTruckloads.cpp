@@ -10,17 +10,32 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
         std::cout << "Program only set up for number of crates greater than or equal to 2" << std::endl;
         return -1;
     }
-    else if(loadSize < 1 || loadSize > numCrates-1){
+
+    //loadSize will be between 1 and numcrates-1 inclusive
+    //for example:
+    //numCrates = 10;
+    //loadSize = 11;
+    //False, loadSize > 9
+    //
+    else if(loadSize <= 1 || loadSize >= numCrates-1){
         std::cout << "Program only set up for loadSize between 1 and numCrates-1 inclusive" << std::endl;
         return -1;
     }
     else{
+
+        //Puts all values less than or equal to the loadsize as 1 in the lookupMap
+        for(int i = 1; i<=loadSize; i++){
+            // std::cout << "Updated lookupMap at " << i << " to 1" << std::endl;
+            lookupMap[i] = 1;
+        }
+
         return numTrucksHelper(numCrates, loadSize, &lookupMap);
     }
 }
 
 int EfficientTruckloads::numTrucksHelper(int numCrates, int loadSize, std::map<int, int>* lookupMap){ 
 
+    // std::cout << "--------------------" << std::endl;
     /*
     //Old way
     //checks if numCrates is less than loadSize
@@ -55,36 +70,37 @@ int EfficientTruckloads::numTrucksHelper(int numCrates, int loadSize, std::map<i
     */
 
     //Is it in lookupMap? If so, return that
-    std::cout << "@" << numCrates << ": " << lookupMap->find(numCrates)->second << std::endl;
+    // std::cout << "@" << numCrates << ": " << lookupMap->find(numCrates)->second << std::endl;
     if(lookupMap->find(numCrates) != lookupMap->end()){
-        std::cout << "found " << lookupMap->find(numCrates)->first << " in the map" << std::endl;
+        // std::cout << "found " << lookupMap->find(numCrates)->first << " in the map: " << lookupMap->find(numCrates)->second << std::endl;
         return lookupMap->find(numCrates)->second;
     }
     else{
 
-        std::cout << "couldn't find " << numCrates << " in the map" << std::endl;
+        // std::cout << "couldn't find " << numCrates << " in the map" << std::endl;
 
         if(numCrates<=loadSize){
-            lookupMap->insert({numCrates, 1});
-            std::cout << "lookup map at " << numCrates << " updated to 1" << std::endl;
+            // lookupMap->insert({numCrates, 1});
+            // std::cout << "lookup map at " << numCrates << " updated to 1" << std::endl;
             return 1;
         } 
 
         //Add to lookupMap
         //If ceil(numCrates/2.0) && floor(numCrates/2.0) are both in lookupMap, add ceil(numCrates/2.0) + floor(numCrates/2.0) as lookupMap[numCrates] entry
-        std::cout << "Dividing: " << numCrates << "/2.0" << std::endl;
+        // std::cout << "Dividing: " << numCrates << "/2.0" << std::endl;
         int ceil = std::ceil(numCrates/2.0);
         int floor = std::floor(numCrates/2.0);
-        std::cout << "at ceil(" << ceil << "): " << lookupMap->find(ceil)->second << std::endl;
-        std::cout << "at floor(" << floor << "): " << lookupMap->find(floor)->second << std::endl;
+        // std::cout << "at ceil(" << ceil << "): " << lookupMap->find(ceil)->second << std::endl;
+        // std::cout << "at floor(" << floor << "): " << lookupMap->find(floor)->second << std::endl;
         if((lookupMap->find(ceil) != lookupMap->end()) && (lookupMap->find(floor) != lookupMap->end())){
-            std::cout << "found " << lookupMap->find(ceil)->first << " and " << lookupMap->find(floor)->first << " in the map" << std::endl;
+            // std::cout << "found " << lookupMap->find(ceil)->first << " and " << lookupMap->find(floor)->first << " in the map" << std::endl;
             lookupMap->insert({numCrates, lookupMap->find(ceil)->second + lookupMap->find(floor)->second});
-            std::cout << "updated " << numCrates << " to " << lookupMap->find(ceil)->second << " + " << lookupMap->find(floor)->second << std::endl;
+            // std::cout << "updated " << numCrates << " to " << lookupMap->find(ceil)->second << " + " << lookupMap->find(floor)->second << std::endl;
             return lookupMap->find(numCrates)->second;
         }
         else{
-            std::cout << "numCrates: " << numCrates << std::endl;
+            // std::cout << "numCrates: " << numCrates << std::endl;
+            // std::cout << "returning: numTrucksHelper(" << ceil << ", " << loadSize << ", lookupMap) + numTrucksHelper(" << floor << ", " << loadSize << ", lookupMap)" << std::endl;
             return numTrucksHelper(ceil, loadSize, lookupMap) + numTrucksHelper(floor, loadSize, lookupMap);
         }
     }

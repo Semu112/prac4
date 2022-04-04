@@ -22,7 +22,7 @@ int main(void){
     i = 12345;
     s = "avalanche";
     numCrates = 10;
-    loadSize = 2;
+    loadSize = 10;
 
     std::cout << "input: " << i << " " << " " << s << " " << numCrates << " " << loadSize << std::endl;
     std::cout << r.reverseDigit(i) << " " <<  r.reverseString(s) << " " << t.numTrucks(numCrates, loadSize) << " " << et.numTrucks(numCrates, loadSize) << std::endl;
