@@ -9,12 +9,17 @@ int main(void){
     EfficientTruckloads et;
     Reverse r;
 
-    std::cout << t.numTrucks(10.9, 4) << std::endl;
+    int i;
+    std::string s;
+    int numCrates;
+    int loadSize;
 
-    std::cout << r.reverseDigit(-123) << std::endl;
-    std::cout << r.reverseString("asdfghjklqwertyuiopzxcvbnm") << std::endl;
+    std::cin >> i;
+    std::cin >> s;
+    std::cin >> numCrates;
+    std::cin >> loadSize;
 
-    std::cout << et.numTrucks(10.9, 4) << std::endl;
+    std::cout << r.reverseDigit(i) << " " <<  r.reverseString(s) << " " << t.numTrucks(numCrates, loadSize) << " " << et.numTrucks(numCrates, loadSize);
 
 
     return 0;
