@@ -3,21 +3,19 @@
 #include <vector>
 #include <array>
 #include <cmath>
+#include <map>
 
 int main(void){
 
-    int numCrates = 5;
-    int number = numCrates;
+    std::map<int, int>* m;
 
-    double numberDividedByTwo = number/2.0;
+    m[1]* = 2;
 
-    std::cout << numberDividedByTwo << std::endl;
+    std::cout << m.find(1)->second << std::endl;
 
-    int spinOff1 = std::ceil(numberDividedByTwo);
-    int spinOff2 = std::floor(numberDividedByTwo);
-
-    std::cout << spinOff1 << std::endl;
-    std::cout << spinOff2 << std::endl;
+    if(m.find(1) != m.end()){
+        std::cout << "found" << std::endl;
+    }
 
     return 0;
 }
