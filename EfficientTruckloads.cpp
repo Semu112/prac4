@@ -16,8 +16,9 @@ int EfficientTruckloads::numTrucks(int numCrates, int loadSize){
     //numCrates = 10;
     //loadSize = 11;
     //False, loadSize > 9
-    //
-    else if(loadSize <= 1 || loadSize >= numCrates-1){
+
+    //If loadSize is 
+    else if(!(loadSize >= 1) || !(loadSize <= numCrates-1)){
         std::cout << "Program only set up for loadSize between 1 and numCrates-1 inclusive" << std::endl;
         return -1;
     }
