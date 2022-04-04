@@ -19,6 +19,8 @@ int main(void){
     // std::cin >> numCrates;
     // std::cin >> loadSize;
 
+    //loadSize must be less than numCrates-1
+
     i = 12345;
     s = "avalanche";
     numCrates = 10;

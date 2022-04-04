@@ -7,7 +7,7 @@ int Truckloads::numTrucks(int numCrates, int loadSize){
         std::cout << "Program only set up for number of crates between 2 and 10000 inclusive" << std::endl;
         return -1;
     }
-    else if(!(loadSize >= 1) || !(loadSize <= numCrates-1)){
+    else if(loadSize < 1 || loadSize > numCrates-1){
         std::cout << "Program only set up for loadSize between 1 and numCrates-1 inclusive" << std::endl;
         return -1;
     }
